@@ -22,9 +22,21 @@ export class AppComponent {
   btnMouse(){
     console.log("you are mouse in on button");
   }
+    btnMouseOver(event:any){
+    console.log("you are mouse in on button");
+    let elementIs=event.target as HTMLButtonElement;
+    console.log(elementIs);
+  }
+
   captureData(eventDetails:any){
     // console.log("data captured")
     console.log(eventDetails);
+    let datause=eventDetails.target as HTMLInputElement;
+    let datais=datause.value;
+    if (datais=="hi"){
+      console.log("YOu have given input hi .");
+    }
+    
     
 
   }
@@ -33,7 +45,22 @@ export class AppComponent {
     console.log(eventDetails);
     let elementData=eventDetails.target as HTMLInputElement;
     console.log(elementData);
-
+    
 
   }
+
+  placeValueIs="Event + Property Binding";
+
+  // dual binding
+  sName="divya";
+  isChecked=true;
+  Isselected=1;
+  drpChange(){
+    console.log("you changed the option")
+  }
+  modelChange(eventis:any){
+    console.log(eventis)
+
+  }
+
 }
