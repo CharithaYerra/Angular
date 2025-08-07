@@ -22,5 +22,18 @@ export class AppComponent {
   btnMouse(){
     console.log("you are mouse in on button");
   }
-  
+  captureData(eventDetails:any){
+    // console.log("data captured")
+    console.log(eventDetails);
+    
+
+  }
+  capture(eventDetails:KeyboardEvent,statusIs:string){
+    // console.log("data captured")
+    console.log(eventDetails);
+    let elementData=eventDetails.target as HTMLInputElement;
+    console.log(elementData);
+
+
+  }
 }
