@@ -1,0 +1,108 @@
+<!-- Hello world
+<br>
+Here is custome componenet
+<app-test-comp></app-test-comp> -->
+
+<!-- string interpolation{{}} -->
+
+<h3>String Interpolation</h3>
+
+<h3>{{title}}</h3>
+<h3>The {{title}} class is conducted on {{classdate}}.</h3>
+<h3>get a roll no like{{getStudentRoll()}}</h3>
+
+<!-- Property Binding [property name] -->
+<input value="Property name">
+<br>
+<br>
+<input [value]="propertyBind">
+<br>
+<br>
+<input [type]="inputType" [disabled]="bool">
+<input [type]="inputType" disabled="false">
+
+<!-- event binding  action ()-->
+ <!-- mouse over,onclick -->
+  <button (click)="btnClick()">Click button</button>
+  <br>
+  <br>
+  <br>
+<button (mouseover)="btnMouse()">Mouse Over</button>
+<br>
+<button (mouseover)="btnMouseOver($event)">Mouse Over</button>
+
+
+<!-- $event -->
+  <br>
+
+<button (click)="btnClick()" (mouseover)="btnMouse()">Mouse Over+ Click Me</button>
+  <br>
+
+
+<input type="text" (keypress)="captureData($event)" placeholder="Event Data Binding with $">
+  <br>
+<p>use of if</p>
+<input type="text" (keyup)="captureData($event)" placeholder="Event Data Binding with key up $">
+<br>
+<input type="text" (keyup)="capture($event,'another argument')" placeholder="Event Data Binding with key up $">
+<br>
+
+<!-- event + property -->
+<p>Here is usage of event + Property</p>
+<br>
+<br>
+<br>
+
+
+
+<input type="text"
+ (keyup)="captureData($event)"
+  [placeholder]=" placeValueIs">
+
+
+<br>
+<br>
+<br>
+<br>
+<hr>
+<!-- dual binding -->
+
+ <h3>Usage of dual Binding</h3>
+
+ <input type="text" [value]="sName"/>
+
+ <input type="checkbox" [checked]="sName"/>
+
+
+
+ <select (change)="drpChange()">
+  <option [selected]="Isselected==1" value="1">1</option>
+  <option [selected]="Isselected==2" value="1">2</option>
+  <option [selected]="Isselected==3" value="1">3</option>
+  
+  
+ </select>
+
+ <h3>Usage of ngModel</h3>
+
+ <input type="text" [ngModel]="sName" (ngModelChange)="modelChange($event)"/>
+
+ <input type="checkbox" [ngModel]="isChecked" [ngModel]="sName" (ngModelChange)="modelChange($event)"/>
+
+ 
+
+ <select (change)="drpChange()" [ngModel]="Isselected"  (ngModelChange)="modelChange($event)">
+  <option value="1">Lang</option>
+  <option value="2">Uk</option>
+  <option value="3">UG</option>
+
+  
+ </select>
+
+ <hr>
+ <input type="text" [(ngModel)]="xyz">
+ <br>
+
+ <p>value is <span>{{xyz}}</span></p>
+ <textarea [value]="xyz"></textarea>
+ 

@@ -1,0 +1,21 @@
+.para{
+    text-align: center;
+    justify-content: center;
+    background-color: aquamarine;
+    font-weight: bold;
+    display: inline;
+    padding: 20px;
+    margin: 20px;
+}
+
+.para1{
+    text-align: end;
+    background-color: rgb(43, 29, 105);
+    display: block;
+    font-style: italic;
+    padding: 20px;
+    margin: 20px;
+
+
+
+}

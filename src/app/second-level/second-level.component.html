@@ -1,0 +1,212 @@
+<h2>{{level}}</h2>
+
+<!-- ngstyle -->
+
+<div [ngStyle]="{'background-color':divBack,'color':fontColor}">{{divText}}</div>
+<br>
+<div [ngStyle]="{'background-color':divBack2,'color':fontColor2}" (mouseover)="changeColor()" (mouseout)="resetChange()" (click)="Other()">
+    {{divText2}}
+</div>
+
+
+<!-- ngclass -->
+
+
+<button (click)="changePara()" [ngClass]="isStatus == true ? 'para' : 'para1'">
+   ClickMe
+</button>
+
+<div [ngClass]="isStatus == true ? 'para' : 'para1'">
+     {{divText3}}
+</div>
+
+
+
+<br>
+<p [ngStyle]="getStyles()">
+  This text has styles from a function.
+</p>
+
+<button (click)="isDarkMode = !isDarkMode">
+  Toggle Dark Mode
+</button>
+
+
+<hr>
+
+<!-- ngIf -->
+
+ <p>{{customerEligibilty}}</p>
+<input type ="checkbox" [(ngModel)]="customerEligibilty"  />
+<p *ngIf="customerEligibilty">
+    Secret Key : 1!@Yumf!*89
+</p> 
+
+
+
+<!-- If isLoggedIn is true, this paragraph is shown -->
+<p *ngIf="isLoggedIn">Welcome back, user!</p>
+
+
+
+<!--Local Ref -->
+<!--Let call the method here.-->
+<p #question>Hey !! How are you doing?</p>
+<button (click)="evtClick(question)">Click me</button>
+<span>{{answer}}</span>
+
+
+
+<!--ngtemplate-->
+<ng-template>
+    <p>
+        Secret Key : 1!@Yumf!*89
+    </p> 
+</ng-template>
+
+
+<ng-template #myTemplate>
+  <p>This is inside the template!</p>
+</ng-template>
+
+
+
+<!--Use case of the ng-template -->
+<p>{{customerEligibilty}}</p>
+<input type ="checkbox" [(ngModel)]="customerEligibilty"  />
+<p *ngIf="customerEligibilty; else feedback">
+    Secret Key : 1!@Yumf!*89
+</p>
+<ng-template #feedback>
+    <p>
+        Hey!!! YOu do't have permission to see the Secreat key.
+        Please contact Bank Representive.
+    </p> 
+</ng-template>
+
+
+<!-- here it checks condition if it is true then paragramph esle uses the templete  -->
+<div *ngIf="isLoggedIn; else loginTemplate">
+  <p>Welcome, user! 🎉</p>
+</div>
+
+<ng-template #loginTemplate>
+  <p>Please log in to continue.</p>
+</ng-template>
+
+
+<!--ngFor - to handle the list of data...-->
+
+
+
+<!-- {{item}} -->
+<ul>
+    <li *ngFor="let item of data ; let ind = index">
+
+        {{ind}} : <input type="text" [value]="item" />
+    </li>
+</ul>
+
+
+
+<!--whatever the value which matches the 2 in options-->
+<!-- value is 2 -->
+
+
+<input type="text" [(ngModel)]="setValue">
+<button (click)="evtDecideFood()">Click me</button>
+
+<select [(ngModel)] = foodDefaultValue>
+    <option 
+    *ngFor="let item of data ; let ind = index" 
+    [value]="ind">
+        {{item}}
+    </option>
+</select>
+
+
+<input  [(ngModel)]="foodDefaultValue" type="text">
+{{foodDefaultValue}}
+
+<select [(ngModel)] = "foodDefaultValue">
+    <option 
+    *ngFor="let item of data ; let ind = index" 
+    [value]="ind">
+        {{item}}
+    </option>
+</select>
+
+
+
+
+<ul>
+    <li *ngFor="let item of data1">
+        {{item.itemNo}} - {{item.itemName}}
+    </li>
+</ul>
+
+
+
+<select [(ngModel)]="data1DefaultValue">
+    <option *ngFor="let opt of data1" 
+         [value]="opt.itemNo">
+        {{opt.itemName}}
+    </option>
+</select>
+
+<!-- <table></table> -->
+
+<table>
+    <thead>
+        <tr>
+            <th 
+               *ngFor="let headerName of columnNames">
+                {{headerName}}</th>
+            <!-- <th>Item No</th>
+            <th>Item Name</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of data1">
+            <td>{{row.itemNo}}</td>
+            <td>{{row.itemName}}</td>
+        </tr>
+        <!-- <tr>
+            <td>CA101</td>
+            <td>Dosa</td>
+        </tr>
+        <tr>
+            <td>CA102</td>
+            <td>Idly</td>
+        </tr>
+        <tr>
+            <td>CA103</td>
+            <td>Rice-1</td>
+        </tr>
+        <tr>
+            <td>CA104</td>
+            <td>Rice-2</td>
+        </tr> -->
+    </tbody>
+</table>
+
+
+
+<!-- ngSwitch and ngswitchcase -->
+
+<p>
+    Hello user !!! Please enter 1,2,3 Id Only .
+     becase we are having the only 3 users </p>
+<input type="text" [(ngModel)]= "customerId">
+
+<div [ngSwitch]="customerId">
+    <p *ngSwitchCase="1">John Smith Lives in London and his Job role is Sales Rep</p>
+
+    <p *ngSwitchCase="2">Robert Frost Lives in New yark and his Job role is Hotel Chef</p>
+
+    <p *ngSwitchCase="3">Peter moore Lives in Colombo and his Job role is Car Driver</p>
+
+    <p *ngSwitchDefault="">Unable to find any user</p>
+</div>
+
+
