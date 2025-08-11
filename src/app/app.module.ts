@@ -6,13 +6,15 @@ import{TestComponent} from  './test-comp/test.component';
 import { FormsModule } from '@angular/forms';
 import { FirstlevelComponent } from './firstlevel/firstlevel.component';
 import { SecondLevelComponent } from './second-level/second-level.component';
+import { ThirdLevelComponent } from './third-level/third-level.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     FirstlevelComponent,
-    SecondLevelComponent
+    SecondLevelComponent,
+    ThirdLevelComponent
   ],
   imports: [
     BrowserModule,

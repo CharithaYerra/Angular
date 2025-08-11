@@ -1,0 +1,31 @@
+<p>third-level works!</p>
+
+<!-- Input with ViewChild -->
+<input type="text" placeholder="First Name" #firstName/>
+<button (click)="btnClick()">Click Me</button>
+
+<!-- ViewChild example -->
+<p #view></p>
+View Child Usage
+<!-- ngFor with styles -->
+<div *ngFor="let number of numbers" [ngStyle]="divStyle">
+  {{number}}
+</div>
+<ng-container *ngFor="let number of numbers" style="color:'blue';
+      
+      padding: '5px';
+      border: '1px solid gray'">
+  {{ number }}
+</ng-container>
+
+
+
+<!-- ng-template to be rendered dynamically -->
+<ng-template #sample>
+  <p style="font-weight: bold; color: blue;">Hello Template!</p>
+</ng-template>
+
+<!-- Container where template will be inserted -->
+<ng-container #container></ng-container>
+
+<button (click)="brnClicking()">Insert Template</button>
